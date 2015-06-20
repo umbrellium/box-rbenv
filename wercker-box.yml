@@ -20,3 +20,4 @@ script: |
   source ~/.bash_profile
   type rbenv
   rbenv --version
+  rbenv install 2.2.2
