@@ -1,0 +1,19 @@
+name: rbenv
+version: 0.0.1
+inherits: wercker/ubuntu12.04-webessentials@1.0.4
+type: main
+platform: ubuntu@12.04
+description: Old fashioned wercker box that uses rbenv to install ruby 2.2.2. Also includes node.js
+keywords:
+  - ruby
+  - rbenv
+  - bundler
+  - nodejs
+script: |
+  sudo apt-get update -y
+  sudo apt-get install git zlib1g-dev libreadline-dev libqtwebkit-dev curl git -y
+  sudo apt-get remove ruby1.9.1
+  git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+  echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+  git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+  source ~/.bash_profile
