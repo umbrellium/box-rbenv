@@ -1,5 +1,5 @@
 name: rbenv
-version: 0.0.3
+version: 0.0.4
 inherits: wercker/ubuntu12.04-webessentials@1.0.4
 type: main
 platform: ubuntu@12.04
@@ -30,3 +30,6 @@ script: |
   sudo apt-get install -y nodejs
   node --version
   npm --version
+  echo "export RAILS_ENV=test" | sudo tee -a /etc/profile.d/rails-test.sh
+  echo "export RACK_ENV=test" | sudo tee -a /etc/profile.d/rails-test.sh
+  sudo chmod +x /etc/profile.d/rails-test.sh
