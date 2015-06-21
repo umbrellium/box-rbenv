@@ -20,4 +20,8 @@ script: |
   source ~/.bash_profile
   type rbenv
   rbenv --version
+  rbenv install 2.1.6
   rbenv install 2.2.2
+  rbenv global 2.2.2
+  rbenv version
+  gem env
