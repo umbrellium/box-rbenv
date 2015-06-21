@@ -1,5 +1,5 @@
 name: rbenv
-version: 0.0.2
+version: 0.0.3
 inherits: wercker/ubuntu12.04-webessentials@1.0.4
 type: main
 platform: ubuntu@12.04
@@ -25,3 +25,8 @@ script: |
   rbenv global 2.2.2
   rbenv version
   gem env
+  gem install bundler --no-rdoc --no-ri
+  curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
+  sudo apt-get install -y nodejs
+  node --version
+  npm --version
